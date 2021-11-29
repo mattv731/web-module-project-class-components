@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -8,6 +8,9 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <input placeholder="input"/>
+        <button>Submit</button>
+        <button>Clear All</button>
       </div>
     );
   }
