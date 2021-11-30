@@ -5,7 +5,7 @@ class TodoForm extends React.Component {
         super();
         this.state = {
             input: ""
-        };
+        }
     }
 
     handleChanges = event => {
@@ -24,7 +24,7 @@ class TodoForm extends React.Component {
 
         return (
             <form>
-                <input onChange={this.handleChanges} type="text" name="task" />
+                <input onChange={this.handleChanges} type="text" name="item" />
                 <button onClick={this.handleClick}>Submit</button>
             </form>
         )

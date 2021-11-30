@@ -35,7 +35,7 @@ class App extends React.Component {
     const newItem = {
       task: item,
       id: Date.now,
-      completed: false
+      completed: false,
     };
 
     this.setState({
@@ -60,10 +60,10 @@ class App extends React.Component {
     // this component is going to take care of state, and any change handlers you need to work with your state
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h2>Welcome to your To Do App!</h2>
         <TodoForm handleAddItem={this.handleAddItem} />
         <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo} />
-        <button onClick={() => this.handleToggle}>Clear All</button>
+        <button onClick={this.handleToggle}>Clear All</button>
       </div>
     );
   }
