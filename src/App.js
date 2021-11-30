@@ -25,10 +25,11 @@ class App extends React.Component {
 
   handleToggle = () => {
     this.setState({
-      todo: this.state.todo.filter((item) => {
-        return !item.completed;
+      ...this.state,
+      todo: this.state.todo.filter(item => {
+        return (!item.completed);
       })
-    });
+    })
   };
 
   handleAddItem = (item) => {
@@ -45,11 +46,11 @@ class App extends React.Component {
 
   handleToggleItem = (item) => {
     this.setState({
-      todo: this.state.todo.map((g) => {
-        if (g.id === item.id) {
-          return { ...g, completed: !g.completed };
+      todo: this.state.todo.map((element) => {
+        if (element.id === item.id) {
+          return { ...element, completed: !element.completed};
         } else {
-          return g;
+          return element;
         }
       })
     });
@@ -60,10 +61,9 @@ class App extends React.Component {
     // this component is going to take care of state, and any change handlers you need to work with your state
     return (
       <div>
-        <h2>Welcome to your To Do App!</h2>
         <TodoForm handleAddItem={this.handleAddItem} />
         <TodoList handleToggleItem={this.handleToggleItem} todo={this.state.todo} />
-        <button onClick={this.handleToggle}>Clear All</button>
+        <button onClick={this.handleToggle}>Clear completed</button>
       </div>
     );
   }
