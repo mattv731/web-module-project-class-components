@@ -1,21 +1,21 @@
 import React from 'react';
 
-class TodoList extends React.Component {
+class TodoForm extends React.Component {
     constructor() {
         super();
         this.state = {
             input: ""
-        }
+        };
     }
 
-    handleChanges = e => {
+    handleChanges = event => {
         this.setState({
             ...this.state,
-            input: e.target.value
+            input: event.target.value
         });
-    }
-    handleClick = (e) => {
-        e.preventDefault();
+    };
+    handleClick = (event) => {
+        event.preventDefault();
 
         this.props.handleAddItem(this.state.input);
     }
@@ -24,12 +24,11 @@ class TodoList extends React.Component {
 
         return (
             <form>
-                <input onChange={this.handleChanges} type="text" name="item" />
+                <input onChange={this.handleChanges} type="text" name="task" />
                 <button onClick={this.handleClick}>Submit</button>
             </form>
         )
     }
 }
 
-}
-export default TodoForm
+export default TodoForm;
